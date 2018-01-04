@@ -13,6 +13,6 @@
 
 [meltdown]
 name=CentOS-CVE-Meltdown
-baseurl=http://mirror.centos.org/meltdown/
+baseurl=https://buildlogs.centos.org/c7.1708.u.x86_64/
 gpgcheck=0
 enabled=1
