@@ -32,7 +32,7 @@ node('centos-core'){
         }
 
         stage('Run Test Suite') {
-            onmyduffynode 'cd sig-core-t_functional && rm -rf /etc/yum.repos.d/*.repo && cp -v preupdates/*.repo /etc/yum.repos.d/'
+            onmyduffynode 'cd sig-core-t_functional && cp -v preupdates/*.repo /etc/yum.repos.d/'
 
             try {
                 onmyduffynode 'yum -y update && reboot ||:'
