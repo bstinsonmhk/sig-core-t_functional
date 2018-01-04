@@ -36,7 +36,7 @@ node('centos-core'){
 
             onmyduffynode 'yum -y update && reboot'
 
-            timeout(time: 20, unit 'MINUTES'){
+            timeout(time: 20, unit: 'MINUTES'){
                 waitUntil {
                     script {
                         def ret = sh script: 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l root ${DUFFY_NODE}.ci.centos.org -t date', returnStatus: true
