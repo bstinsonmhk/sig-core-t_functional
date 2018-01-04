@@ -43,7 +43,7 @@ node('centos-core'){
                 waitUntil {
                     script {
                         def ret = sh script: 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l root ${DUFFY_NODE}.ci.centos.org -t date', returnStatus: true
-                        return (r == 0);
+                        return (ret == 0);
                     }
                 }
             }
