@@ -34,7 +34,10 @@ node('centos-core'){
         stage('Run Test Suite') {
             onmyduffynode 'cd sig-core-t_functional && rm -rf /etc/yum.repos.d/*.repo && cp -v preupdates/*.repo /etc/yum.repos.d/'
 
-            onmyduffynode 'yum -y update && reboot'
+            try {
+                onmyduffynode 'yum -y update && reboot ||:'
+            }catch (ignore){
+            }
 
             timeout(time: 20, unit: 'MINUTES'){
                 waitUntil {
