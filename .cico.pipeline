@@ -28,7 +28,7 @@ node('centos-core'){
         }
 
         stage('Clone Test Suite') {
-            onmyduffynode "git clone -b \"${env.BRANCH_NAME}\" https://github.com/bstinsonmhk/sig-core-t_functional"
+            onmyduffynode "git clone -b \"meltdown\" https://github.com/bstinsonmhk/sig-core-t_functional"
         }
 
         stage('Run Test Suite') {
